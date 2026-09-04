@@ -35,7 +35,7 @@ export default function HeroSection() {
       {/* CV is served from public/assets/hero/cv/ — the "#" in the filename
           must stay URL-encoded as %23 or the browser treats it as a fragment. */}
       <a
-        href="/assets/hero/cv/cv%232.docx.pdf"
+        href="/assets/hero/cv/danang-cv.pdf"
         download
         className="btn-pill w-full sm:w-auto px-8 py-3.5 text-body-lg font-semibold text-[#4A6070] border border-[#4A6070] hover:text-[#1A1A1A] hover:border-[#1A1A1A] focus-visible:text-[#1A1A1A] focus-visible:border-[#1A1A1A] transition-colors duration-200"
       >
