@@ -1,0 +1,103 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="IBM Plex Sans, Inter, system-ui, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FAFAF8"/>
+  <!-- Outer border -->
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── Title area ── -->
+  <text x="40" y="52" font-size="13" font-weight="600" fill="#1A1A1A" letter-spacing="0.04em" text-transform="uppercase">MULTI-CLOUD MIGRATION</text>
+  <text x="40" y="72" font-size="11" fill="#8C8C8C">Travel &amp; Booking Platform — AWS → Alibaba Cloud</text>
+  <line x1="40" y1="88" x2="760" y2="88" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── Source (AWS) column — left ── -->
+  <text x="80" y="122" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">SOURCE</text>
+  <!-- EC2 box -->
+  <rect x="48" y="134" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="113" y="150" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">EC2 Instances</text>
+  <text x="113" y="163" font-size="9" fill="#8C8C8C" text-anchor="middle">Application Servers</text>
+  <!-- S3 box -->
+  <rect x="48" y="188" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="113" y="204" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">S3 Buckets</text>
+  <text x="113" y="217" font-size="9" fill="#8C8C8C" text-anchor="middle">Object Storage</text>
+  <!-- MongoDB box -->
+  <rect x="48" y="242" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="113" y="258" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">MongoDB Atlas</text>
+  <text x="113" y="271" font-size="9" fill="#8C8C8C" text-anchor="middle">Document Database</text>
+  <!-- Cloud SQL box -->
+  <rect x="48" y="296" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="113" y="312" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">Cloud SQL</text>
+  <text x="113" y="325" font-size="9" fill="#8C8C8C" text-anchor="middle">Relational Database</text>
+  <!-- AWS label badge -->
+  <rect x="72" y="356" width="80" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="112" y="371" font-size="10" font-weight="600" fill="#4A6070" text-anchor="middle">AWS</text>
+
+  <!-- ── Migration arrow (center) ── -->
+  <line x1="220" y1="250" x2="330" y2="250" stroke="#4A6070" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <polygon points="330,245 342,250 330,255" fill="#4A6070"/>
+  <rect x="242" y="232" width="70" height="20" rx="4" fill="#FAFAF8" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="277" y="246" font-size="9" fill="#4A6070" text-anchor="middle" font-weight="500">Migration</text>
+
+  <!-- ── Destination (Alibaba Cloud) column — right ── -->
+  <text x="421" y="122" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em" text-anchor="middle">TARGET</text>
+  <!-- ECS box -->
+  <rect x="356" y="134" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="421" y="150" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">ECS Instances</text>
+  <text x="421" y="163" font-size="9" fill="#8C8C8C" text-anchor="middle">Application Servers</text>
+  <!-- OSS box -->
+  <rect x="356" y="188" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="421" y="204" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">Alibaba OSS</text>
+  <text x="421" y="217" font-size="9" fill="#8C8C8C" text-anchor="middle">Object Storage</text>
+  <!-- ApsaraDB box -->
+  <rect x="356" y="242" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="421" y="258" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">ApsaraDB MongoDB</text>
+  <text x="421" y="271" font-size="9" fill="#8C8C8C" text-anchor="middle">Document Database</text>
+  <!-- RDS box -->
+  <rect x="356" y="296" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="421" y="312" font-size="10" font-weight="600" fill="#1A1A1A" text-anchor="middle">ApsaraDB RDS</text>
+  <text x="421" y="325" font-size="9" fill="#8C8C8C" text-anchor="middle">Relational Database</text>
+  <!-- Alibaba label badge -->
+  <rect x="358" y="356" width="116" height="22" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="416" y="371" font-size="10" font-weight="600" fill="#4A6070" text-anchor="middle">Alibaba Cloud</text>
+
+  <!-- ── VPC + Network layer — right side ── -->
+  <text x="635" y="122" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em" text-anchor="middle">NETWORK</text>
+  <rect x="526" y="134" width="218" height="202" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="635" y="152" font-size="10" fill="#8C8C8C" text-anchor="middle">VPC (Alibaba Cloud)</text>
+  <!-- VSwitch boxes -->
+  <rect x="544" y="164" width="82" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="585" y="178" font-size="9" fill="#1A1A1A" text-anchor="middle" font-weight="500">VSwitch A</text>
+  <text x="585" y="190" font-size="8" fill="#8C8C8C" text-anchor="middle">Zone A</text>
+  <rect x="652" y="164" width="82" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="693" y="178" font-size="9" fill="#1A1A1A" text-anchor="middle" font-weight="500">VSwitch B</text>
+  <text x="693" y="190" font-size="8" fill="#8C8C8C" text-anchor="middle">Zone B</text>
+  <!-- SLB box -->
+  <rect x="574" y="212" width="122" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="635" y="226" font-size="9" fill="#1A1A1A" text-anchor="middle" font-weight="500">Server Load Balancer</text>
+  <text x="635" y="238" font-size="8" fill="#8C8C8C" text-anchor="middle">Traffic Distribution</text>
+  <!-- NAT box -->
+  <rect x="574" y="260" width="122" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="635" y="274" font-size="9" fill="#1A1A1A" text-anchor="middle" font-weight="500">NAT Gateway</text>
+  <text x="635" y="286" font-size="8" fill="#8C8C8C" text-anchor="middle">Internet Access</text>
+  <!-- VPC peering line -->
+  <line x1="486" y1="235" x2="526" y2="228" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── Key metrics bar ── -->
+  <line x1="40" y1="410" x2="760" y2="410" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="40" y="434" font-size="10" fill="#8C8C8C">Outcome</text>
+  <rect x="110" y="420" width="140" height="26" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="180" y="437" font-size="10" fill="#1A1A1A" text-anchor="middle">Minimal Downtime</text>
+  <rect x="262" y="420" width="140" height="26" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="332" y="437" font-size="10" fill="#1A1A1A" text-anchor="middle">Automated Failover</text>
+  <rect x="414" y="420" width="140" height="26" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="484" y="437" font-size="10" fill="#1A1A1A" text-anchor="middle">VPC Peering</text>
+  <rect x="566" y="420" width="140" height="26" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="636" y="437" font-size="10" fill="#1A1A1A" text-anchor="middle">Full Data Migration</text>
+
+  <!-- ── Legend ── -->
+  <circle cx="45" cy="465" r="5" fill="#E8E6E1"/>
+  <text x="56" y="470" font-size="9" fill="#8C8C8C">Source (AWS)</text>
+  <circle cx="165" cy="465" r="5" fill="#4A6070"/>
+  <text x="176" y="470" font-size="9" fill="#8C8C8C">Target (Alibaba Cloud)</text>
+  <line x1="310" y1="465" x2="330" y2="465" stroke="#4A6070" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="337" y="470" font-size="9" fill="#8C8C8C">Migration Path</text>
+</svg>

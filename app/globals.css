@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Fonts loaded via <link> tag in layout.tsx.
+  IBM Plex Sans: headlines (weight 600)
+  Inter: body text
+  JetBrains Mono: technical labels / metadata
+*/
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
+:root {
+  /* Light theme — single source of truth */
+  --color-bg:          #FAFAF8;
+  --color-surface:     #FFFFFF;
+  --color-hairline:    #E8E6E1;
+  --color-ink:         #1A1A1A;
+  --color-ink-secondary: #5C5C5C;
+  --color-ink-muted:   #737373;
+  --color-primary:     #4A6070;
+  --color-primary-hover: #3A5060;
+
+  /* Radii */
+  --radius-sm:   4px;
+  --radius-card: 8px;
+  --radius-pill: 9999px;
+
+  /* Section vertical padding */
+  --section-py: 120px;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    /* Light background — approved base */
+    background-color: #FAFAF8;
+    color: #1A1A1A;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  /* Headlines use IBM Plex Sans */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(74, 96, 112, 0.2);
+    color: #1A1A1A;
+  }
+
+  /* Focus visible — primary accent only */
+  :focus-visible {
+    outline: 2px solid #4A6070;
+    outline-offset: 2px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #FAFAF8; }
+  ::-webkit-scrollbar-thumb { background: #E8E6E1; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4A6070; }
+}
+
+/* ─── Scroll-Reveal Animation ────────────────────────────────────────────── */
+@layer utilities {
+  /*
+    fade-in-up: 30px vertical offset, 0.6s, standard easing.
+    NO stagger delays — all .reveal elements animate together.
+    prefers-reduced-motion: elements shown immediately, no motion.
+  */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Section spacing — 120px vertical */
+  .section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+  }
+
+  /* Pill button base */
+  .btn-pill {
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  /* Skill logo: grayscale default, color on hover */
+  .skill-logo {
+    filter: grayscale(1);
+    opacity: 0.6;
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  .skill-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+
+/* ─── Component Styles ───────────────────────────────────────────────────── */
+@layer components {
+  /*
+    Card — white surface, 1px hairline border, NO shadow.
+    Radius: 8px (--radius-card).
+  */
+  .card {
+    background-color: #FFFFFF;
+    border: 1px solid #E8E6E1;
+    border-radius: 8px;
+  }
+
+  /* Accordion item divider */
+  .accordion-item {
+    border-bottom: 1px solid #E8E6E1;
+  }
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+
+  /*
+    Muted link — resting state is the neutral ink-muted gray, hover/focus is the
+    accent slate-blue and nothing else. Driven by the palette custom properties
+    so no off-palette hue can creep in, and by a real :hover rule rather than JS
+    mutating element.style.color: React never rewrites an unchanged style prop,
+    so a missed mouseleave used to be able to strand the link in the accent
+    color permanently.
+  */
+  .link-muted {
+    color: var(--color-ink-muted);
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .link-muted:hover,
+  .link-muted:focus-visible {
+    color: var(--color-primary);
+  }
+}

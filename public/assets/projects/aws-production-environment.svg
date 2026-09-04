@@ -1,0 +1,108 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="IBM Plex Sans, Inter, system-ui, sans-serif">
+  <rect width="800" height="500" fill="#FAFAF8"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="52" font-size="13" font-weight="600" fill="#1A1A1A" letter-spacing="0.04em">AWS PRODUCTION ENVIRONMENT</text>
+  <text x="40" y="72" font-size="11" fill="#8C8C8C">Industrial Manufacturing Client — VPC · EC2 · RDS · S3 · CloudTrail</text>
+  <line x1="40" y1="88" x2="760" y2="88" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── VPC outer boundary ── -->
+  <rect x="40" y="100" width="720" height="300" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="56" y="118" font-size="10" fill="#8C8C8C">VPC — us-east-1</text>
+  <rect x="636" y="106" width="116" height="20" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="694" y="120" font-size="8" fill="#4A6070" text-anchor="middle">CIDR 10.0.0.0/16</text>
+
+  <!-- ── Public subnet AZ-a ── -->
+  <rect x="60" y="128" width="290" height="120" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="76" y="144" font-size="9" fill="#8C8C8C">Public Subnet — AZ-a</text>
+  <!-- Internet Gateway entry -->
+  <rect x="76" y="154" width="100" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="126" y="169" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Internet Gateway</text>
+  <text x="126" y="180" font-size="8" fill="#8C8C8C" text-anchor="middle">igw-prod</text>
+  <!-- ALB -->
+  <rect x="196" y="154" width="140" height="32" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="266" y="169" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Application Load Balancer</text>
+  <text x="266" y="180" font-size="8" fill="#8C8C8C" text-anchor="middle">HTTPS · Multi-AZ</text>
+  <!-- NAT — private-resource outbound internet access -->
+  <rect x="76" y="200" width="140" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="146" y="215" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">NAT Gateway</text>
+  <text x="146" y="226" font-size="8" fill="#8C8C8C" text-anchor="middle">Elastic IP</text>
+  <!-- Bastion -->
+  <rect x="236" y="200" width="100" height="32" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="286" y="215" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Bastion Host</text>
+  <text x="286" y="226" font-size="8" fill="#8C8C8C" text-anchor="middle">EC2 · t3.micro</text>
+
+  <!-- ── Private subnet AZ-a ── -->
+  <rect x="60" y="264" width="290" height="122" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="76" y="280" font-size="9" fill="#8C8C8C">Private Subnet — AZ-a / AZ-b</text>
+  <!-- EC2 ASG -->
+  <rect x="76" y="290" width="120" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="136" y="306" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">EC2 Auto Scaling</text>
+  <text x="136" y="318" font-size="8" fill="#8C8C8C" text-anchor="middle">min 2 · max 8</text>
+  <text x="136" y="328" font-size="8" fill="#8C8C8C" text-anchor="middle">EBS gp3 volumes</text>
+  <!-- RDS Multi-AZ -->
+  <rect x="214" y="290" width="120" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="274" y="306" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">RDS Multi-AZ</text>
+  <text x="274" y="318" font-size="8" fill="#8C8C8C" text-anchor="middle">MySQL · gp2</text>
+  <text x="274" y="328" font-size="8" fill="#8C8C8C" text-anchor="middle">Automated backup</text>
+
+  <!-- ── S3 + Audit (right panel) ── -->
+  <rect x="380" y="128" width="362" height="256" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="396" y="144" font-size="10" fill="#8C8C8C">Storage &amp; Audit</text>
+
+  <!-- S3 buckets -->
+  <rect x="396" y="154" width="152" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="472" y="170" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">S3 — Application Data</text>
+  <text x="472" y="183" font-size="8" fill="#8C8C8C" text-anchor="middle">Versioning · SSE-S3</text>
+  <rect x="564" y="154" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="644" y="170" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">S3 — Backup Archive</text>
+  <text x="644" y="183" font-size="8" fill="#8C8C8C" text-anchor="middle">Lifecycle: 30d → Glacier</text>
+
+  <!-- CloudTrail -->
+  <rect x="396" y="210" width="152" height="40" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="472" y="226" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">CloudTrail</text>
+  <text x="472" y="239" font-size="8" fill="#8C8C8C" text-anchor="middle">All API events · S3 sink</text>
+  <!-- CloudWatch -->
+  <rect x="564" y="210" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="644" y="226" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">CloudWatch</text>
+  <text x="644" y="239" font-size="8" fill="#8C8C8C" text-anchor="middle">Metrics · Alarms · Logs</text>
+
+  <!-- IAM -->
+  <rect x="396" y="266" width="152" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="472" y="282" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">IAM Roles &amp; Policies</text>
+  <text x="472" y="295" font-size="8" fill="#8C8C8C" text-anchor="middle">Least privilege</text>
+  <!-- Security Groups -->
+  <rect x="564" y="266" width="160" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="644" y="282" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Security Groups</text>
+  <text x="644" y="295" font-size="8" fill="#8C8C8C" text-anchor="middle">Stateful · deny-by-default</text>
+
+  <!-- Route53 -->
+  <rect x="396" y="322" width="328" height="40" rx="4" fill="#FAFAF8" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="560" y="338" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Route 53</text>
+  <text x="560" y="351" font-size="8" fill="#8C8C8C" text-anchor="middle">DNS · Health checks · Failover routing</text>
+
+  <!-- ── Metrics bar ── -->
+  <line x1="40" y1="416" x2="760" y2="416" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="40" y="436" font-size="10" fill="#8C8C8C">Compliance</text>
+  <rect x="110" y="424" width="140" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="180" y="439" font-size="9" fill="#1A1A1A" text-anchor="middle">Multi-AZ Redundancy</text>
+  <rect x="264" y="424" width="140" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="334" y="439" font-size="9" fill="#1A1A1A" text-anchor="middle">CloudTrail Audit Log</text>
+  <rect x="418" y="424" width="140" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="488" y="439" font-size="9" fill="#1A1A1A" text-anchor="middle">S3 Lifecycle Policy</text>
+  <rect x="572" y="424" width="140" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="642" y="439" font-size="9" fill="#1A1A1A" text-anchor="middle">EBS Snapshots</text>
+
+  <!-- Primary traffic: Internet Gateway → ALB → EC2 Auto Scaling -->
+  <line x1="176" y1="170" x2="196" y2="170" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="196,166 208,170 196,174" fill="#4A6070"/>
+  <!-- Routed along the subnet edge to avoid the NAT and all labels -->
+  <path d="M336 170 H344 V270 H136 V290" fill="none" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="131,285 136,298 141,285" fill="#4A6070"/>
+
+  <!-- Private outbound egress: EC2 Auto Scaling → NAT Gateway → Internet Gateway -->
+  <line x1="196" y1="310" x2="196" y2="232" stroke="#4A6070" stroke-width="1" stroke-dasharray="4,3"/>
+  <polygon points="191,238 196,226 201,238" fill="#4A6070"/>
+  <line x1="126" y1="200" x2="126" y2="186" stroke="#4A6070" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>

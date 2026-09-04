@@ -1,0 +1,98 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="IBM Plex Sans, Inter, system-ui, sans-serif">
+  <rect width="800" height="500" fill="#FAFAF8"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="52" font-size="13" font-weight="600" fill="#1A1A1A" letter-spacing="0.04em">ARMS / OPENTELEMETRY OBSERVABILITY POC</text>
+  <text x="40" y="72" font-size="11" fill="#8C8C8C">Local Government IT Agency — Managed Service for OpenTelemetry · Alibaba Cloud ARMS</text>
+  <line x1="40" y1="88" x2="760" y2="88" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── Application tier (sources) ── -->
+  <text x="40" y="112" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">INSTRUMENTED SERVICES</text>
+  <rect x="40" y="122" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="95" y="139" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Service A</text>
+  <text x="95" y="153" font-size="8" fill="#8C8C8C" text-anchor="middle">OTel SDK</text>
+
+  <rect x="166" y="122" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="221" y="139" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Service B</text>
+  <text x="221" y="153" font-size="8" fill="#8C8C8C" text-anchor="middle">OTel SDK</text>
+
+  <rect x="292" y="122" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="347" y="139" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">Service C</text>
+  <text x="347" y="153" font-size="8" fill="#8C8C8C" text-anchor="middle">OTel SDK</text>
+
+  <rect x="418" y="122" width="110" height="40" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="473" y="139" font-size="9" font-weight="500" fill="#1A1A1A" text-anchor="middle">API Gateway</text>
+  <text x="473" y="153" font-size="8" fill="#8C8C8C" text-anchor="middle">OTel auto-instr.</text>
+
+  <!-- Signal annotations -->
+  <text x="595" y="130" font-size="9" fill="#8C8C8C">Signals emitted:</text>
+  <rect x="590" y="136" width="70" height="18" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="625" y="149" font-size="8" fill="#1A1A1A" text-anchor="middle">Traces</text>
+  <rect x="672" y="136" width="80" height="18" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="712" y="149" font-size="8" fill="#1A1A1A" text-anchor="middle">Metrics</text>
+  <rect x="590" y="158" width="70" height="18" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="625" y="171" font-size="8" fill="#1A1A1A" text-anchor="middle">Logs</text>
+
+  <!-- ── Arrows to OTel Collector ── -->
+  <line x1="95" y1="162" x2="255" y2="212" stroke="#4A6070" stroke-width="1"/>
+  <line x1="221" y1="162" x2="270" y2="212" stroke="#4A6070" stroke-width="1"/>
+  <line x1="347" y1="162" x2="310" y2="212" stroke="#4A6070" stroke-width="1"/>
+  <line x1="473" y1="162" x2="330" y2="212" stroke="#4A6070" stroke-width="1"/>
+
+  <!-- ── OTel Collector ── -->
+  <rect x="210" y="212" width="200" height="56" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1.5"/>
+  <text x="310" y="232" font-size="11" font-weight="600" fill="#4A6070" text-anchor="middle">OTel Collector</text>
+  <text x="310" y="247" font-size="9" fill="#8C8C8C" text-anchor="middle">Managed Service (Alibaba Cloud)</text>
+  <text x="310" y="260" font-size="8" fill="#8C8C8C" text-anchor="middle">Receive · Process · Export</text>
+
+  <!-- ── Export arrows from collector ── -->
+  <!-- to ARMS Traces -->
+  <line x1="280" y1="268" x2="180" y2="310" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="176,306 180,318 184,306" fill="#4A6070"/>
+  <!-- to ARMS Metrics -->
+  <line x1="310" y1="268" x2="310" y2="310" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="306,310 310,322 314,310" fill="#4A6070"/>
+  <!-- to Log Service -->
+  <line x1="340" y1="268" x2="450" y2="310" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="446,306 450,318 454,306" fill="#4A6070"/>
+
+  <!-- ── ARMS backends ── -->
+  <rect x="100" y="322" width="160" height="46" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="180" y="339" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">ARMS Tracing</text>
+  <text x="180" y="352" font-size="9" fill="#8C8C8C" text-anchor="middle">Distributed trace analysis</text>
+  <text x="180" y="363" font-size="8" fill="#8C8C8C" text-anchor="middle">Service map · flame graph</text>
+
+  <rect x="230" y="322" width="160" height="46" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="310" y="339" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">ARMS Metrics</text>
+  <text x="310" y="352" font-size="9" fill="#8C8C8C" text-anchor="middle">Time-series storage</text>
+  <text x="310" y="363" font-size="8" fill="#8C8C8C" text-anchor="middle">Prometheus-compatible</text>
+
+  <rect x="360" y="322" width="160" height="46" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="440" y="339" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Log Service (SLS)</text>
+  <text x="440" y="352" font-size="9" fill="#8C8C8C" text-anchor="middle">Structured log ingestion</text>
+  <text x="440" y="363" font-size="8" fill="#8C8C8C" text-anchor="middle">Search · alerts</text>
+
+  <!-- ── Dashboards ── -->
+  <rect x="560" y="322" width="200" height="46" rx="4" fill="#FAFAF8" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="660" y="339" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">ARMS Dashboard</text>
+  <text x="660" y="352" font-size="9" fill="#8C8C8C" text-anchor="middle">Unified observability view</text>
+  <text x="660" y="363" font-size="8" fill="#8C8C8C" text-anchor="middle">Cross-service correlation</text>
+  <line x1="520" y1="345" x2="560" y2="345" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── Footer ── -->
+  <line x1="40" y1="388" x2="760" y2="388" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="40" y="410" font-size="10" fill="#8C8C8C">Architecture highlights</text>
+  <rect x="200" y="396" width="160" height="24" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="280" y="412" font-size="9" fill="#1A1A1A" text-anchor="middle">Zero-code auto-instrumentation</text>
+  <rect x="374" y="396" width="160" height="24" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="454" y="412" font-size="9" fill="#1A1A1A" text-anchor="middle">Fully managed collector</text>
+  <rect x="548" y="396" width="160" height="24" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="628" y="412" font-size="9" fill="#1A1A1A" text-anchor="middle">OTLP / gRPC export</text>
+
+  <text x="40" y="438" font-size="10" fill="#8C8C8C">Deliverable</text>
+  <rect x="120" y="426" width="260" height="24" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="250" y="442" font-size="9" fill="#4A6070" text-anchor="middle" font-weight="500">POC documentation · handover guide · runbook</text>
+
+  <text x="40" y="472" font-size="9" fill="#8C8C8C">Standard: OpenTelemetry Specification 1.x · OTLP protocol · W3C TraceContext propagation</text>
+</svg>

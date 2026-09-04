@@ -1,0 +1,123 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="IBM Plex Sans, Inter, system-ui, sans-serif">
+  <rect width="800" height="500" fill="#FAFAF8"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="52" font-size="13" font-weight="600" fill="#1A1A1A" letter-spacing="0.04em">LEGACY MODERNIZATION TO GKE</text>
+  <text x="40" y="72" font-size="11" fill="#8C8C8C">Aku Mitra Digital — Monolith to Microservices on Google Kubernetes Engine</text>
+  <line x1="40" y1="88" x2="760" y2="88" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── CI/CD Pipeline (top row) ── -->
+  <text x="40" y="112" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">CI/CD PIPELINE</text>
+
+  <!-- GitHub box -->
+  <rect x="40" y="122" width="100" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="90" y="137" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">GitHub</text>
+  <text x="90" y="151" font-size="9" fill="#8C8C8C" text-anchor="middle">Source Code</text>
+  <!-- arrow -->
+  <line x1="140" y1="140" x2="168" y2="140" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="168,136 180,140 168,144" fill="#4A6070"/>
+
+  <!-- Cloud Build box -->
+  <rect x="180" y="122" width="110" height="36" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="235" y="137" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Build</text>
+  <text x="235" y="151" font-size="9" fill="#8C8C8C" text-anchor="middle">Build &amp; Test</text>
+  <!-- arrow -->
+  <line x1="290" y1="140" x2="318" y2="140" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="318,136 330,140 318,144" fill="#4A6070"/>
+
+  <!-- Artifact Registry box -->
+  <rect x="330" y="122" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="390" y="137" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Artifact Registry</text>
+  <text x="390" y="151" font-size="9" fill="#8C8C8C" text-anchor="middle">Container Images</text>
+  <!-- arrow -->
+  <line x1="450" y1="140" x2="478" y2="140" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="478,136 490,140 478,144" fill="#4A6070"/>
+
+  <!-- Container Scanning box -->
+  <rect x="490" y="122" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="550" y="137" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Container Scan</text>
+  <text x="550" y="151" font-size="9" fill="#8C8C8C" text-anchor="middle">Security Checks</text>
+  <!-- arrow -->
+  <line x1="610" y1="140" x2="638" y2="140" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="638,136 650,140 638,144" fill="#4A6070"/>
+
+  <!-- Deploy box -->
+  <rect x="650" y="122" width="100" height="36" rx="4" fill="#4A6070"/>
+  <text x="700" y="137" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">Deploy</text>
+  <text x="700" y="151" font-size="9" fill="rgba(255,255,255,0.7)" text-anchor="middle">GKE Cluster</text>
+
+  <!-- Deploy arrow down -->
+  <line x1="700" y1="158" x2="700" y2="184" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="695,184 700,196 705,184" fill="#4A6070"/>
+
+  <!-- ── GKE Cluster ── -->
+  <rect x="40" y="196" width="720" height="180" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="56" y="216" font-size="10" fill="#8C8C8C">GKE Cluster — Production</text>
+
+  <!-- Namespace badge -->
+  <rect x="640" y="204" width="110" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="695" y="219" font-size="9" fill="#4A6070" text-anchor="middle" font-weight="500">IAM / RBAC</text>
+
+  <!-- Service boxes inside cluster -->
+  <!-- Auth service -->
+  <rect x="64" y="228" width="108" height="50" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="118" y="248" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Auth Service</text>
+  <text x="118" y="262" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+  <text x="118" y="273" font-size="8" fill="#8C8C8C" text-anchor="middle">HPA enabled</text>
+
+  <!-- API Gateway -->
+  <rect x="192" y="228" width="108" height="50" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="246" y="248" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">API Gateway</text>
+  <text x="246" y="262" font-size="8" fill="#8C8C8C" text-anchor="middle">3 replicas</text>
+  <text x="246" y="273" font-size="8" fill="#8C8C8C" text-anchor="middle">Ingress</text>
+
+  <!-- Core service -->
+  <rect x="320" y="228" width="108" height="50" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="374" y="248" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Core Service</text>
+  <text x="374" y="262" font-size="8" fill="#8C8C8C" text-anchor="middle">4 replicas</text>
+  <text x="374" y="273" font-size="8" fill="#8C8C8C" text-anchor="middle">HPA enabled</text>
+
+  <!-- Worker service -->
+  <rect x="448" y="228" width="108" height="50" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="502" y="248" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Worker Service</text>
+  <text x="502" y="262" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+  <text x="502" y="273" font-size="8" fill="#8C8C8C" text-anchor="middle">Job queue</text>
+
+  <!-- Notify service -->
+  <rect x="576" y="228" width="108" height="50" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="630" y="248" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Notify Service</text>
+  <text x="630" y="262" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+  <text x="630" y="273" font-size="8" fill="#8C8C8C" text-anchor="middle">Event driven</text>
+
+  <!-- Blue/Green deploy label -->
+  <rect x="64" y="294" width="620" height="70" rx="4" fill="#FAFAF8" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="374" y="318" font-size="10" fill="#8C8C8C" text-anchor="middle">Blue / Green Deployment Strategy</text>
+  <!-- Blue slot -->
+  <rect x="90" y="328" width="240" height="26" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="210" y="346" font-size="10" fill="#1A1A1A" text-anchor="middle">Blue  (current stable)</text>
+  <!-- Green slot -->
+  <rect x="416" y="328" width="240" height="26" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="536" y="346" font-size="10" fill="#4A6070" text-anchor="middle">Green  (new release)</text>
+
+  <!-- ── Data layer ── -->
+  <text x="40" y="402" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">DATA</text>
+  <rect x="40" y="412" width="130" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="105" y="427" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud SQL</text>
+  <text x="105" y="441" font-size="9" fill="#8C8C8C" text-anchor="middle">PostgreSQL · HA</text>
+  <rect x="192" y="412" width="130" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="257" y="427" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Storage</text>
+  <text x="257" y="441" font-size="9" fill="#8C8C8C" text-anchor="middle">GCS Buckets</text>
+  <rect x="344" y="412" width="130" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="409" y="427" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Pub/Sub</text>
+  <text x="409" y="441" font-size="9" fill="#8C8C8C" text-anchor="middle">Async messaging</text>
+
+  <!-- Legend -->
+  <line x1="40" y1="462" x2="760" y2="462" stroke="#E8E6E1" stroke-width="1"/>
+  <rect x="40" y="472" width="10" height="10" rx="2" fill="#4A6070"/>
+  <text x="56" y="482" font-size="9" fill="#8C8C8C">Active / Target component</text>
+  <rect x="200" y="472" width="10" height="10" rx="2" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="216" y="482" font-size="9" fill="#8C8C8C">Supporting service</text>
+  <line x1="340" y1="477" x2="360" y2="477" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="368" y="482" font-size="9" fill="#8C8C8C">Cluster boundary</text>
+</svg>

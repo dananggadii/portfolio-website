@@ -1,0 +1,111 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="IBM Plex Sans, Inter, system-ui, sans-serif">
+  <rect width="800" height="500" fill="#FAFAF8"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="52" font-size="13" font-weight="600" fill="#1A1A1A" letter-spacing="0.04em">CLOUD-NATIVE TENDER POC — GCP</text>
+  <text x="40" y="72" font-size="11" fill="#8C8C8C">Regional Bank — GKE · Cloud Build · Terraform · HA Architecture</text>
+  <line x1="40" y1="88" x2="760" y2="88" stroke="#E8E6E1" stroke-width="1"/>
+
+  <!-- ── Users / Internet ── -->
+  <rect x="40" y="110" width="90" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="85" y="125" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Users</text>
+  <text x="85" y="139" font-size="9" fill="#8C8C8C" text-anchor="middle">HTTPS</text>
+  <!-- arrow to LB -->
+  <line x1="130" y1="128" x2="168" y2="128" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="168,124 180,128 168,132" fill="#4A6070"/>
+
+  <!-- Cloud Load Balancer -->
+  <rect x="180" y="110" width="130" height="36" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="245" y="125" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Load Balancer</text>
+  <text x="245" y="139" font-size="9" fill="#8C8C8C" text-anchor="middle">Global · SSL Termination</text>
+  <!-- arrow down to GKE -->
+  <line x1="245" y1="146" x2="245" y2="172" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="240,172 245,184 250,172" fill="#4A6070"/>
+
+  <!-- ── GKE Cluster boundary ── -->
+  <rect x="40" y="184" width="540" height="160" rx="4" fill="none" stroke="#E8E6E1" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="56" y="202" font-size="10" fill="#8C8C8C">GKE Cluster — Private</text>
+  <rect x="476" y="190" width="96" height="20" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="524" y="204" font-size="8" fill="#4A6070" text-anchor="middle">Workload Identity</text>
+
+  <!-- API pods -->
+  <rect x="64" y="214" width="100" height="44" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="114" y="231" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">API Pods</text>
+  <text x="114" y="244" font-size="8" fill="#8C8C8C" text-anchor="middle">Tender API</text>
+  <text x="114" y="254" font-size="8" fill="#8C8C8C" text-anchor="middle">3 replicas</text>
+
+  <!-- Tender Logic pods -->
+  <rect x="190" y="214" width="100" height="44" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="240" y="231" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Core Logic</text>
+  <text x="240" y="244" font-size="8" fill="#8C8C8C" text-anchor="middle">Evaluation Engine</text>
+  <text x="240" y="254" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+
+  <!-- Document pods -->
+  <rect x="316" y="214" width="100" height="44" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="366" y="231" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Doc Service</text>
+  <text x="366" y="244" font-size="8" fill="#8C8C8C" text-anchor="middle">PDF / Signing</text>
+  <text x="366" y="254" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+
+  <!-- Auth pods -->
+  <rect x="442" y="214" width="100" height="44" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="492" y="231" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Auth Service</text>
+  <text x="492" y="244" font-size="8" fill="#8C8C8C" text-anchor="middle">IAM / Roles</text>
+  <text x="492" y="254" font-size="8" fill="#8C8C8C" text-anchor="middle">2 replicas</text>
+
+  <!-- Network Policy row -->
+  <rect x="64" y="272" width="478" height="26" rx="4" fill="#FAFAF8" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="303" y="289" font-size="9" fill="#8C8C8C" text-anchor="middle">Network Policy — restricted pod-to-pod communication · mTLS between services</text>
+
+  <!-- ── CI/CD (side) ── -->
+  <text x="610" y="112" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">CI/CD</text>
+  <rect x="610" y="122" width="150" height="30" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="685" y="141" font-size="10" fill="#1A1A1A" text-anchor="middle">GitHub (Source)</text>
+  <line x1="685" y1="152" x2="685" y2="170" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="680,170 685,182 690,170" fill="#4A6070"/>
+  <rect x="610" y="182" width="150" height="30" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="685" y="201" font-size="10" fill="#1A1A1A" text-anchor="middle">Cloud Build</text>
+  <line x1="685" y1="212" x2="685" y2="230" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="680,230 685,242 690,230" fill="#4A6070"/>
+  <rect x="610" y="242" width="150" height="30" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="685" y="261" font-size="10" fill="#1A1A1A" text-anchor="middle">Artifact Registry</text>
+  <line x1="685" y1="272" x2="685" y2="290" stroke="#4A6070" stroke-width="1.5"/>
+  <polygon points="680,290 685,302 690,290" fill="#4A6070"/>
+  <rect x="610" y="302" width="150" height="30" rx="4" fill="#4A6070"/>
+  <text x="685" y="321" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">Deploy → GKE</text>
+
+  <!-- Arrow from CI/CD into cluster -->
+  <line x1="610" y1="317" x2="584" y2="317" stroke="#4A6070" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ── Data layer ── -->
+  <text x="40" y="374" font-size="10" font-weight="600" fill="#8C8C8C" letter-spacing="0.06em">DATA &amp; STORAGE</text>
+  <rect x="40" y="384" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="100" y="399" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud SQL</text>
+  <text x="100" y="413" font-size="9" fill="#8C8C8C" text-anchor="middle">PostgreSQL · HA</text>
+  <rect x="176" y="384" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="236" y="399" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Storage</text>
+  <text x="236" y="413" font-size="9" fill="#8C8C8C" text-anchor="middle">Document archive</text>
+  <rect x="312" y="384" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="372" y="399" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Secret Manager</text>
+  <text x="372" y="413" font-size="9" fill="#8C8C8C" text-anchor="middle">Credentials</text>
+  <rect x="448" y="384" width="120" height="36" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="508" y="399" font-size="10" font-weight="500" fill="#1A1A1A" text-anchor="middle">Cloud Armor</text>
+  <text x="508" y="413" font-size="9" fill="#8C8C8C" text-anchor="middle">WAF / DDoS</text>
+
+  <!-- Terraform badge -->
+  <rect x="610" y="384" width="150" height="36" rx="4" fill="#FFFFFF" stroke="#4A6070" stroke-width="1"/>
+  <text x="685" y="399" font-size="10" font-weight="600" fill="#4A6070" text-anchor="middle">Terraform</text>
+  <text x="685" y="413" font-size="9" fill="#8C8C8C" text-anchor="middle">IaC — full infra</text>
+
+  <!-- Footer rule -->
+  <line x1="40" y1="440" x2="760" y2="440" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="40" y="460" font-size="9" fill="#8C8C8C">Compliance</text>
+  <rect x="110" y="448" width="160" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="190" y="463" font-size="9" fill="#1A1A1A" text-anchor="middle">Financial-sector security requirements</text>
+  <rect x="286" y="448" width="130" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="351" y="463" font-size="9" fill="#1A1A1A" text-anchor="middle">Private GKE cluster</text>
+  <rect x="432" y="448" width="130" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="497" y="463" font-size="9" fill="#1A1A1A" text-anchor="middle">Workload Identity</text>
+  <rect x="578" y="448" width="130" height="22" rx="4" fill="#FFFFFF" stroke="#E8E6E1" stroke-width="1"/>
+  <text x="643" y="463" font-size="9" fill="#1A1A1A" text-anchor="middle">High Availability</text>
+</svg>
