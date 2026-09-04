@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import FooterSection from "@/components/FooterSection";
 
 const SITE_URL = "https://danang-dev.my.id";
 
@@ -95,9 +93,7 @@ export default function RootLayout({
         style={{ backgroundColor: "#FAFAF8", color: "#1A1A1A" }}
         suppressHydrationWarning
       >
-        <Navbar />
         {children}
-        <FooterSection />
       </body>
     </html>
   );
