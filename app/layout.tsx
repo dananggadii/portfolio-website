@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     // twitter:image falls back to the Open Graph image
   },
   icons: {
-    icon: "/assets/favicon/favicon.png",
-    apple: "/assets/favicon/favicon.png",
+    icon: "/assets/logo.svg",
+    apple: "/assets/logo.svg",
   },
   robots: { index: true, follow: true },
 };

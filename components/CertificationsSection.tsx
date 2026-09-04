@@ -23,7 +23,7 @@ const certifications: { name: string; src: string; verifyUrl?: string }[] = [
   {
     name: "AWS Certified Cloud Practitioner",
     src: "/assets/certification/aws-certified-cloud-practitioner.png",
-    verifyUrl: "https://www.credly.com/badges/83c037aa-326a-4b50-92ac-5346ac6998e1/linked_in_profile",
+    verifyUrl: "https://www.credly.com/badges/83c037aa-326a-4b50-92ac-5346ac6998e1/public_url",
   },
   {
     name: "Google Cloud Professional Cloud Architect",
