@@ -1,19 +1,21 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Certifications", href: "/certifications" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
 ] as const;
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,31 +24,6 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  /* Scrollspy — one IntersectionObserver watches all five sections through
-     a thin band around the viewport's vertical midpoint; whichever section
-     crosses the band is "current". No scroll listeners, and the last section
-     to intersect stays active when none does (e.g. over the footer), so the
-     highlight never flickers. */
-  useEffect(() => {
-    const sections = NAV_LINKS.map((link) =>
-      document.getElementById(link.href.slice(1))
-    ).filter((el): el is HTMLElement => el !== null);
-
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -77,10 +54,10 @@ export default function Navbar() {
               restore the desktop rhythm. */}
           <ul className="flex items-center gap-2 max-[374px]:gap-1 sm:gap-4 md:gap-8">
             {NAV_LINKS.map((link) => {
-              const isActive = activeSection === link.href.slice(1);
+              const isActive = pathname === link.href;
               return (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     aria-current={isActive ? "true" : undefined}
                     className={`-mx-1 inline-flex h-11 md:h-12 items-center whitespace-nowrap px-1 text-body-xs max-[374px]:text-[11px] sm:text-body-sm transition-colors duration-200 ${
@@ -89,7 +66,7 @@ export default function Navbar() {
                     style={{ textDecoration: "none" }}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
