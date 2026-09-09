@@ -66,22 +66,13 @@ export default function HeroSection() {
           {description}
         </p>
 
-        <div className="reveal flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <div className="reveal">
           <button
             onClick={scrollToAbout}
             className="btn-pill w-full sm:w-auto px-8 py-3.5 text-body-lg font-semibold bg-[#4A6070] text-white hover:bg-[#3A5060] focus-visible:bg-[#3A5060] transition-colors duration-200"
           >
             Find out more
           </button>
-          {/* CV is served from public/assets/hero/cv/ — the "#" in the filename
-              must stay URL-encoded as %23 or the browser treats it as a fragment. */}
-          <a
-            href="/assets/hero/cv/danang-cv.pdf"
-            download
-            className="btn-pill w-full sm:w-auto px-8 py-3.5 text-body-lg font-semibold text-[#4A6070] border border-[#4A6070] hover:text-[#1A1A1A] hover:border-[#1A1A1A] focus-visible:text-[#1A1A1A] focus-visible:border-[#1A1A1A] transition-colors duration-200"
-          >
-            Download CV
-          </a>
         </div>
 
         {/* Stats — plain text row, no cards */}
